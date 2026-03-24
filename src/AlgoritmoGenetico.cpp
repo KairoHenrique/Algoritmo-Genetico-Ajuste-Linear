@@ -36,7 +36,7 @@ void AlgoritmoGenetico::inicializarPopulacao(double limite_min, double limite_ma
 }
 
 void AlgoritmoGenetico::executar() {
-    std::ofstream arquivo_saida("output.dat");
+    std::ofstream arquivo_saida("data/output.dat");
 
     std::random_device rd;
     std::mt19937 gen(rd());
