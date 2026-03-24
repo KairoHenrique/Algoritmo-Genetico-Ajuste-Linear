@@ -9,6 +9,7 @@ class AlgoritmoGenetico {
 private:
     std::vector<Individuo> populacao;
     std::vector<Ponto> dataset;
+    std::vector<double> vetor_fitness;
     int n, m, G;
 
 public:

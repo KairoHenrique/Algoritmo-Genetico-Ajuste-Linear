@@ -38,10 +38,19 @@ void AlgoritmoGenetico::inicializarPopulacao(double limite_min, double limite_ma
 void AlgoritmoGenetico::executar() {
     std::ofstream arquivo_saida("output.dat");
 
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<> dis_mutacao(-0.5, 0.5); 
+
     for (int geracao = 0; geracao < G; geracao++) {
         
         for (auto& ind : populacao) {
             ind.avaliar(dataset);
+        }
+
+        vetor_fitness.clear();
+        for (const auto& ind : populacao) {
+            vetor_fitness.push_back(ind.fitness);
         }
 
         std::sort(populacao.begin(), populacao.end(), [](const Individuo& i1, const Individuo& i2) {
@@ -53,7 +62,7 @@ void AlgoritmoGenetico::executar() {
 
         Individuo filho(pai1.a, pai2.b);
 
-        double delta = 0.5;
+        double delta = dis_mutacao(gen);
         filho.mutar(delta);
         filho.avaliar(dataset); 
 
@@ -63,10 +72,11 @@ void AlgoritmoGenetico::executar() {
             return i1.fitness > i2.fitness;
         });
 
-        arquivo_saida << populacao[0].fitness << " " 
-                      << populacao[0].erro << " " 
-                      << populacao[0].a << " " 
-                      << populacao[0].b << "\n";
+        arquivo_saida << "Geracao " << geracao + 1 
+                      << " | Fitness: " << populacao[0].fitness 
+                      << " | Erro: " << populacao[0].erro 
+                      << " | a: " << populacao[0].a 
+                      << " | b: " << populacao[0].b << "\n";
     }
     
     arquivo_saida.close();
