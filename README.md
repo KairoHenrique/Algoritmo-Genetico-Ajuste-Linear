@@ -174,7 +174,7 @@ A execução lerá os dados e gerará imediatamente o arquivo **`output.dat`** c
 ## :busts_in_silhouette: Desenvolvedor do Projeto
 
 
-[<img loading="lazy" src="https://ui-avatars.com/api/?name=KairoHenrique&background=random" width=115><br><sub>Kairo Henrique</sub>](https://github.com/KairoHenrique)
+[<img loading="lazy" src="https://avatars.githubusercontent.com/u/135791815?v=4" width=115><br><sub>Kairo Henrique</sub>](https://github.com/KairoHenrique)
 Estudante de Engenharia de Computação.
 
 
