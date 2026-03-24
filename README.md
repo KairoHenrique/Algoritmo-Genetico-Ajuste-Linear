@@ -61,20 +61,22 @@ O código foi desenvolvido utilizando as seguintes ferramentas:
 A estrutura do projeto é disposta da seguinte maneira:
 
 ```text
-trab_aquecimento/
-├── Makefile                   # Script de compilação
-├── README.md                  # Descrição geral do projeto
-├── build/                     # Diretório de binários (gerado automaticamente)
-│   └── app                    # Executável final do algoritmo
-├── include/                   # Headers (Declarações de classes)
-│   ├── AlgoritmoGenetico.hpp  # Estrutura do controlador evolutivo
-│   └── Individuo.hpp          # Estrutura do cromossomo/solução
-├── src/                       # Implementações C++
-│   ├── AlgoritmoGenetico.cpp  # Lógica principal das gerações
-│   ├── Individuo.cpp          # Métodos de avaliação e mutação
-│   └── main.cpp               # Ponto de entrada do sistema
-├── input.dat                  # Arquivo contendo N, M, G e os pontos reais
-└── output.dat                 # Arquivo gerado com logs (a, b, erro, fitness)
+Algoritmo-Genetico-AJuste-Linear/
+├── Makefile                   # Script para automação da compilação
+├── README.md                  # Documentação principal do projeto
+├── include/                   # Arquivos de cabeçalho
+    ├── AlgoritmoGenetico.hpp  # Estrutura do controlador evolutivo 
+    └── Individuo.hpp          # Estrutura do cromossomo/solução 
+├── src/                       # Código-fonte das implementações (C++)
+    ├── AlgoritmoGenetico.cpp  # Lógica das gerações, seleção e cruzamento
+    ├── Individuo.cpp          # Cálculos de avaliação (MSE) e mutação
+    └── main.cpp               # Execução principal do programa
+├── data/                      # Diretório de dados operacionais
+    ├── input.dat              # Arquivo lido pela simulação (N, M, G e coordenadas)
+    └── output.dat             # Relatório gerado automaticamente com os resultados
+└── misc/                      # Arquivos auxiliares e documentação extra
+    ├── input.dat              # Modelo de exemplo para o arquivo de entrada
+    └── Trab 1 Aeds.pdf        # Documento com a especificação do trabalho
 ```
 
 ## :man_technologist: Implementação
@@ -149,7 +151,7 @@ git clone <https://github.com/KairoHenrique/Algoritmo-Genetico-AJuste-Linear>
 ```
 
 #### **2. Arquivo de Dados (`input.dat`)**
-Certifique-se de que existe um arquivo `input.dat` na raiz do diretório com os parâmetros na primeira linha (n, m, G) e as coordenadas x e y nas linhas seguintes. Exemplo:
+Certifique-se de que existe um arquivo `input.dat` na pasta data com os parâmetros na primeira linha (n, m, G) e as coordenadas x e y nas linhas seguintes. Exemplo:
 ```text
 5 20 100
 1.0 3.1
