@@ -146,7 +146,7 @@ Para a execução correta do software, é recomendado o seguinte ambiente:
 #### **1. Clone o repositório**
 No terminal, digite o seguinte comando para clonar o repositório;
 ```bash
-git clone <https://github.com/KairoHenrique/Algoritmo-Genetico-AJuste-Linear>
+git clone https://github.com/KairoHenrique/Algoritmo-Genetico-AJuste-Linear
 
 ```
 
@@ -173,11 +173,17 @@ make run
 A execução lerá os dados e gerará imediatamente o arquivo **`output.dat`** contendo os indicadores de evolução para cada geração processada.
 
 
-## :busts_in_silhouette: Desenvolvedor do Projeto
+## 👥 Desenvolvedor do Projeto
 
-
-[<img loading="lazy" src="https://avatars.githubusercontent.com/u/135791815?v=4" width=115><br><sub>Kairo Henrique</sub>](https://github.com/KairoHenrique)
-Estudante de Engenharia de Computação.
+<div align="center">
+  <a href="https://github.com/KairoHenrique">
+    <img src="https://avatars.githubusercontent.com/u/135791815?v=4" width="120" alt="Foto do Kairo Henrique">
+  </a>
+  <br>
+  <strong>Kairo Henrique Ferreira Martins</strong>
+  <br>
+  Estudante de Engenharia de Computação no CEFET-MG.
+</div>
 
 
 ## :computer: Ambiente de teste
@@ -187,9 +193,8 @@ Este projeto foi executado:
   * **Sistema Operacional**: Debian GNU/Linux 13
   * **Compilador**: GCC (g++).
 
-
-## :gear: Recursos Utilizados
+## ⚙️ Recursos Utilizados
 <p align="left">
-  <img alt="Visual Studio Code" height="60" width="60" src="[https://github.com/gui-bus/TechIcons/blob/main/Dark/VSCode.svg](https://github.com/gui-bus/TechIcons/blob/main/Dark/VSCode.svg)">
-  <img alt="C++" height="60" width="60" src="[https://github.com/gui-bus/TechIcons/blob/main/Dark/C++.svg](https://github.com/gui-bus/TechIcons/blob/main/Dark/C++.svg)">
+  <img alt="Visual Studio Code" height="60" src="https://raw.githubusercontent.com/gui-bus/TechIcons/main/Dark/VSCode.svg">
+  <img alt="C++" height="60" src="https://raw.githubusercontent.com/gui-bus/TechIcons/main/Dark/C++.svg">
 </p>
