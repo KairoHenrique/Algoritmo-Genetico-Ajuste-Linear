@@ -24,7 +24,7 @@ Este trabalho foi proposto pelo professor Michel Pires Silva, instrutor da disci
 
 - **Genes (a, b)**: Coeficientes da reta.
 - **Erro**: Discrepância calculada entre a reta do indivíduo e os pontos reais.
-- **Fitness**: Valor de aptidão inversamente proporcional ao erro ($1/(1+erro)$).
+- **Fitness**: Valor de aptidão inversamente proporcional ao erro ($\frac{1}{1 + erro}$).
 
 ### :pushpin: 2. Simulação do Processo Evolutivo
 
