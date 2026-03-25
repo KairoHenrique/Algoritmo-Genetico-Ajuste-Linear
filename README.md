@@ -144,13 +144,19 @@ Para a execução correta do software, é recomendado o seguinte ambiente:
 ### **Passos e Comandos**
 
 #### **1. Clone o repositório**
-No terminal, digite o seguinte comando para clonar o repositório;
+No terminal, digite o seguinte comando para clonar o repositório:
 ```bash
 git clone https://github.com/KairoHenrique/Algoritmo-Genetico-AJuste-Linear
 
 ```
 
-#### **2. Arquivo de Dados (`input.dat`)**
+#### **2. Acessar o diretório do projeto**
+No terminal, navegue até a pasta raiz do repositório recém-clonado:
+```bash
+cd Algoritmo-Genetico-AJuste-Linear
+```
+
+#### **3. Arquivo de Dados (`input.dat`)**
 Certifique-se de que existe um arquivo `input.dat` na pasta data com os parâmetros na primeira linha (n, m, G) e as coordenadas x e y nas linhas seguintes. Exemplo:
 ```text
 5 20 100
@@ -159,14 +165,14 @@ Certifique-se de que existe um arquivo `input.dat` na pasta data com os parâmet
 ...
 ```
 
-#### **3. Compilar o projeto:**
+#### **4. Compilar o projeto:**
 Comando para compilar:
 ```bash
 make
 ```
 *(Caso queira forçar uma recompilação limpa, utilize `make clean` antes de `make`)*.
 
-#### **4. Executar o projeto:**
+#### **5. Executar o projeto:**
 ```bash
 make run
 ```
