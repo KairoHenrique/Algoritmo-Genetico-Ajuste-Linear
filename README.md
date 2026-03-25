@@ -32,7 +32,7 @@ Este trabalho foi proposto pelo professor Michel Pires Silva, instrutor da disci
   A evolução da população ocorre de forma iterativa ao longo de $G$ gerações, seguindo um conjunto de regras biológicas adaptadas para a matemática.
 </p>
 
-#### 2.1 Regras de Propagação (Crossover):
+#### 2.1 Regras de Propagação:
 <p align="justify">
   A cada iteração, toda a população é avaliada e ranqueada de acordo com o fitness. O algoritmo aplica o elitismo puro, selecionando os dois indivíduos mais aptos (Pai 1 e Pai 2). O cruzamento genético ocorre mesclando o coeficiente angular ($a$) do Pai 1 com o coeficiente linear ($b$) do Pai 2 para gerar uma nova solução candidata (Filho).
 </p>
@@ -74,7 +74,7 @@ Algoritmo-Genetico-AJuste-Linear/
 ├── data/                      # Diretório de dados operacionais
     ├── input.dat              # Arquivo lido pela simulação (N, M, G e coordenadas)
     └── output.dat             # Relatório gerado automaticamente com os resultados
-└── misc/                      # Arquivos auxiliares e documentação extra
+└── misc/                      # Arquivos diversos 
     ├── input.dat              # Modelo de exemplo para o arquivo de entrada
     └── Trab 1 Aeds.pdf        # Documento com a especificação do trabalho
 ```
