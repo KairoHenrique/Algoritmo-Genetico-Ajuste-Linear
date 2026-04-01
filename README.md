@@ -73,37 +73,31 @@ Algoritmo-Genetico-AJuste-Linear/
     └── main.cpp               # Execução principal do programa
 ├── data/                      # Diretório de dados operacionais
     ├── input.dat              # Arquivo lido pela simulação (N, M, G e coordenadas)
-    └── output.dat             # Relatório gerado automaticamente com os resultados
+    └── output.dat             # Relatório gerado com os resultados
 └── misc/                      # Arquivos diversos 
+    ├── Fluxograma.png         # Fluxograma 
     ├── input.dat              # Modelo de exemplo para o arquivo de entrada
     └── Trab 1 Aeds.pdf        # Documento com a especificação do trabalho
 ```
 
-## :man_technologist: Implementação
+## 👨‍💻 Implementação
 
-O fluxo do programa se inicia pela leitura dos dados do problema através do `input.dat`, cujas configurações ditam o tamanho do dataset ($n$), o tamanho da população ($m$) e o total de gerações ($G$).
+O fluxo de execução do nosso Otimizador Genético segue um ciclo contínuo de avaliação e evolução. A implementação foi estruturada de forma modular, garantindo que a população de retas candidatas evolua gradativamente a cada geração.
 
-O construtor populacional utiliza a biblioteca `<random>` do C++ para alocar os indivíduos com instâncias pseudoaleatórias, distribuídas uniformemente, garantindo uma variedade inicial crucial para o processo evolutivo.
+O processo funciona através das seguintes etapas principais:
+1. **Inicialização:** Os dados reais são lidos do arquivo `input.dat` e a população inicial é instanciada com valores completamente aleatórios para os genes `a` (coeficiente angular) e `b` (coeficiente linear).
+2. **Avaliação (Fitness):** O programa calcula o Erro Quadrático Médio (MSE) de cada indivíduo em relação aos pontos do dataset. Quanto menor o erro, maior a aptidão.
+3. **Seleção e Crossover:** Utilizando elitismo, os dois melhores indivíduos são selecionados para gerar um "Filho", misturando a inclinação de um com a altura do outro.
+4. **Mutação e Substituição:** O Filho sofre uma pequena mutação estocástica no eixo Y para garantir diversidade e, em seguida, substitui o pior indivíduo da população atual. O ciclo se repete até o limite de gerações $G$ ser atingido.
 
-```cpp
-std::random_device rd;
-std::mt19937 gen(rd()); 
-std::uniform_real_distribution<> dis(-10.0, 10.0);
-for (int i = 0; i < m; i++) {
-    populacao.push_back(Individuo(dis(gen), dis(gen)));
-}
-```
+<details>
+  <summary><b>Clique aqui para visualizar o Fluxograma do Algoritmo</b></summary>
+  
+  <div align="center">
+    <img src="misc/Fluxograma.png" alt="Fluxograma do Algoritmo Genético" width="800">
+  </div>
 
-O núcleo do simulador está no loop principal de `AlgoritmoGenetico::executar()`. Para atender aos requisitos técnicos, além do encapsulamento natural do C++, implementou-se um vetor auxiliar obrigatório:
-
-```cpp
-vetor_fitness.clear();
-for (const auto& ind : populacao) {
-    vetor_fitness.push_back(ind.fitness);
-}
-```
-
-A mutação contínua (com $\delta$ variando dinamicamente entre valores positivos e negativos) garante que o erro possa fazer um ajuste fino da reta tanto aumentando quanto diminuindo sua altura em relação ao eixo $y$. 
+</details>
 
 ## 💬🎯 Análises e Conclusões
 
