@@ -82,13 +82,16 @@ Algoritmo-Genetico-AJuste-Linear/
 
 ## 👨‍💻 Implementação
 
-O fluxo de execução do nosso Otimizador Genético segue um ciclo contínuo de avaliação e evolução. A implementação foi estruturada de forma modular, garantindo que a população de retas candidatas evolua gradativamente a cada geração.
+O fluxo de execução do nosso Otimizador Genético segue um ciclo contínuo de avaliação e evolução. A implementação foi estruturada de forma modular.
 
-O processo funciona através das seguintes etapas principais:
-1. **Inicialização:** Os dados reais são lidos do arquivo `input.dat` e a população inicial é instanciada com valores completamente aleatórios para os genes `a` (coeficiente angular) e `b` (coeficiente linear).
-2. **Avaliação (Fitness):** O programa calcula o Erro Quadrático Médio (MSE) de cada indivíduo em relação aos pontos do dataset. Quanto menor o erro, maior a aptidão.
-3. **Seleção e Crossover:** Utilizando elitismo, os dois melhores indivíduos são selecionados para gerar um "Filho", misturando a inclinação de um com a altura do outro.
-4. **Mutação e Substituição:** O Filho sofre uma pequena mutação estocástica no eixo Y para garantir diversidade e, em seguida, substitui o pior indivíduo da população atual. O ciclo se repete até o limite de gerações $G$ ser atingido.
+O processo funciona através das seguintes etapas, mapeadas passo a passo no fluxograma:
+
+1. **Inicialização:** A execução começa lendo o arquivo `input.dat` **(Passo 1)** para obter os dados reais. Em seguida, a população inicial de tamanho $m$ é instanciada **(Passo 2)** com valores completamente aleatórios para os genes `a` (coeficiente angular) e `b` (coeficiente linear).
+2. **Avaliação (Fitness):** Na etapa de avaliação **(Passo 3)**, o programa calcula o Erro Quadrático Médio (MSE) e a aptidão de cada indivíduo em relação aos pontos do dataset. Quanto menor o erro, maior a aptidão.
+3. **Decisão e Finalização:** O algoritmo testa a todo momento se o limite de $G$ gerações foi atingido **(Passo 4)**. Quando isso acontece, o ciclo se encerra e o arquivo `output.dat` é gerado apenas com os acertos finais **(Passo 9)**.
+4. **Ciclo Evolutivo:** Enquanto o limite de gerações não é atingido, a população evolui através de:
+   - **Seleção e Crossover:** Os dois melhores indivíduos são selecionados via elitismo **(Passo 5)** para gerar um "Filho", misturando a inclinação de um com a altura do outro **(Passo 6)**.
+   - **Mutação e Substituição:** Esse Filho sofre uma pequena mutação estocástica aplicando uma variação $\delta$ no eixo Y **(Passo 7)**. Por fim, ele substitui o pior indivíduo da população atual **(Passo 8)**, e o sistema retorna para a fase de avaliação.
 
 <details>
   <summary><b>Clique aqui para visualizar o Fluxograma do Algoritmo</b></summary>
@@ -104,6 +107,23 @@ O processo funciona através das seguintes etapas principais:
 A validação da modelagem foi feita observando o log em `output.dat`. Nas gerações iniciais, o erro apresenta grande oscilação, configurando retas que cruzam os pontos de maneira caótica. No entanto, por causa da heurística de substituir sempre o pior indivíduo, a população global se torna cada vez mais precisa. 
 
 Notou-se que a mutação é o motor secundário essencial: sem uma variação $\delta$ bilateral (positiva e negativa), os filhos gerados pelo crossover elitista poderiam "travar" num mínimo local matemático, nunca alcançando o menor Erro Quadrático Médio possível.
+
+### 🧪 Caso de Teste e Validação
+
+Para testar se o algoritmo realmente funciona na prática, foi criado um cenário onde a resposta já era conhecida. Usei a função matemática $f(x) = 2x + 3$ para calcular e gerar os pontos que vão no arquivo `input.dat`.
+
+O desafio do programa era olhar apenas para as coordenadas $(x, y)$ e "adivinhar" a fórmula original, ou seja, evoluir até encontrar os coeficientes exatos $a = 2$ e $b = 3$.
+
+**Exemplo dos pontos utilizados:**
+Para gerar os dados do teste, basta substituir o valor de $x$ na fórmula:
+* Se $x = 1$, então $y = 5$
+* Se $x = 2$, então $y = 7$
+* Se $x = 3$, então $y = 9$
+* Se $x = 4$, então $y = 11$
+* Se $x = 5$, então $y = 13$
+
+**Resultado Final:**
+Ao final das gerações, o algoritmo conseguiu encontrar exatamente a reta que gerou esses pontos. O arquivo `output.dat` registra esse acerto, mostrando que o programa encontrou $a = 2$ e $b = 3$, com a taxa de erro tendendo a zero.
 
 ### Análise Assintótica
 
@@ -170,8 +190,7 @@ make
 ```bash
 make run
 ```
-A execução lerá os dados e gerará imediatamente o arquivo **`output.dat`** contendo os indicadores de evolução para cada geração processada.
-
+A execução lerá os dados e gerará o arquivo **`output.dat`** contendo os acertos finais encontrados pelo algoritmo para os coeficientes.
 
 ## 👥 Desenvolvedor do Projeto
 
