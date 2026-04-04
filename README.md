@@ -220,8 +220,9 @@ Geracao 100 | Fitness: 0.957048 | Erro: 0.0448798 | a: 1.27293 | b: 2.26949
   <strong>Kairo Henrique Ferreira Martins</strong>
   <br>
   Estudante de Engenharia de Computação no CEFET-MG.
+  <br>
+  📧 Email: <a href="mailto:kairohenrique293@gmail.com">kairohenrique293@gmail.com</a>
 </div>
-
 
 ## :computer: Ambiente de teste
 Este projeto foi executado:
