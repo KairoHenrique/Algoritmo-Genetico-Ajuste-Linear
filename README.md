@@ -1,5 +1,10 @@
 # <h1 align="center"> Otimizador Genético Linear </h1>
 
+<p align="center">
+  <img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge" />
+  <img loading="lazy" src="http://img.shields.io/static/v1?label=Linguagem&message=C%2B%2B&color=blue&style=for-the-badge" />
+</p>
+
 ## :page_with_curl: Introdução
 <p align="justify">
   
@@ -85,14 +90,6 @@ Algoritmo-Genetico-AJuste-Linear/
 O fluxo de execução do nosso Otimizador Genético segue um ciclo contínuo de avaliação e evolução. A implementação foi estruturada de forma modular.
 
 O processo funciona através das seguintes etapas, mapeadas passo a passo no fluxograma:
-
-1. **Inicialização:** A execução começa lendo o arquivo `input.dat` **(Passo 1)** para obter os dados reais. Em seguida, a população inicial de tamanho $m$ é instanciada **(Passo 2)** com valores completamente aleatórios para os genes `a` (coeficiente angular) e `b` (coeficiente linear).
-2. **Avaliação (Fitness):** Na etapa de avaliação **(Passo 3)**, o programa calcula o Erro Quadrático Médio (MSE) e a aptidão de cada indivíduo em relação aos pontos do dataset. Quanto menor o erro, maior a aptidão.
-3. **Decisão e Finalização:** O algoritmo testa a todo momento se o limite de $G$ gerações foi atingido **(Passo 4)**. Quando isso acontece, o ciclo se encerra e o arquivo `output.dat` é gerado apenas com os acertos finais **(Passo 9)**.
-4. **Ciclo Evolutivo:** Enquanto o limite de gerações não é atingido, a população evolui através de:
-   - **Seleção e Crossover:** Os dois melhores indivíduos são selecionados via elitismo **(Passo 5)** para gerar um "Filho", misturando a inclinação de um com a altura do outro **(Passo 6)**.
-   - **Mutação e Substituição:** Esse Filho sofre uma pequena mutação estocástica aplicando uma variação $\delta$ no eixo Y **(Passo 7)**. Por fim, ele substitui o pior indivíduo da população atual **(Passo 8)**, e o sistema retorna para a fase de avaliação.
-
 <details>
   <summary><b>Clique aqui para visualizar o Fluxograma do Algoritmo</b></summary>
   
@@ -101,6 +98,15 @@ O processo funciona através das seguintes etapas, mapeadas passo a passo no flu
   </div>
 
 </details>
+
+1. **Inicialização:** A execução começa lendo o arquivo `input.dat` **(Passo 1)** para obter os dados reais. Em seguida, a população inicial de tamanho $m$ é instanciada **(Passo 2)** com valores completamente aleatórios para os genes `a` (coeficiente angular) e `b` (coeficiente linear).
+2. **Avaliação (Fitness):** Na etapa de avaliação **(Passo 3)**, o programa calcula o Erro Quadrático Médio (MSE) e a aptidão de cada indivíduo em relação aos pontos do dataset. Quanto menor o erro, maior a aptidão.
+3. **Decisão e Finalização:** O algoritmo testa a todo momento se o limite de $G$ gerações foi atingido **(Passo 4)**. Quando isso acontece, o ciclo se encerra e o arquivo `output.dat` é gerado apenas com os acertos finais **(Passo 9)**.
+4. **Ciclo Evolutivo:** Enquanto o limite de gerações não é atingido, a população evolui através de:
+   - **Seleção e Crossover:** Os dois melhores indivíduos são selecionados via elitismo **(Passo 5)** para gerar um "Filho", misturando a inclinação de um com a altura do outro **(Passo 6)**.
+   - **Mutação e Substituição:** Esse Filho sofre uma pequena mutação estocástica aplicando uma variação $\delta$ no eixo Y **(Passo 7)**. Por fim, ele substitui o pior indivíduo da população atual **(Passo 8)**, e o sistema retorna para a fase de avaliação.
+
+
 
 ## 💬🎯 Análises e Conclusões
 
@@ -125,7 +131,7 @@ Para gerar os dados do teste, basta substituir o valor de $x$ na fórmula:
 **Resultado Final:**
 Ao final das gerações, o algoritmo conseguiu encontrar exatamente a reta que gerou esses pontos. O arquivo `output.dat` registra esse acerto, mostrando que o programa encontrou $a = 2$ e $b = 3$, com a taxa de erro tendendo a zero.
 
-### Análise Assintótica
+### ⏱️Análise Assintótica
 
 A eficiência do Algoritmo Genético depende profundamente da dimensão da população ($m$) e da quantidade de gerações ($G$).
 
@@ -148,7 +154,7 @@ A eficiência do Algoritmo Genético depende profundamente da dimensão da popul
 - **n**: Quantidade de pontos do dataset.
 
 
-## :keyboard: Instalação e Configuração 
+## ⚙️ Instalação e Configuração 
 
 Para a execução correta do software, é recomendado o seguinte ambiente:
   * Compilador C++ (g++ recomendado, com suporte a C++11 ou superior)
@@ -191,6 +197,18 @@ make
 make run
 ```
 A execução lerá os dados e gerará o arquivo **`output.dat`** contendo os acertos finais encontrados pelo algoritmo para os coeficientes.
+
+**Exemplo de Saída (`output.dat`):**
+O arquivo gerará o log de evolução detalhado de cada geração. Exemplo:
+```text
+Geracao 1 | Fitness: 0.182201 | Erro: 4.48845 | a: 1.27293 | b: 4.35681
+Geracao 2 | Fitness: 0.182201 | Erro: 4.48845 | a: 1.27293 | b: 4.35681
+...
+Geracao 37 | Fitness: 0.948123 | Erro: 0.0547155 | a: 1.27293 | b: 2.35005
+...
+Geracao 100 | Fitness: 0.957048 | Erro: 0.0448798 | a: 1.27293 | b: 2.26949
+```
+*(Note como o Erro diminui e o Fitness aumenta rapidamente conforme a população evolui).*
 
 ## 👥 Desenvolvedor do Projeto
 
