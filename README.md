@@ -199,7 +199,7 @@ make run
 A execução lerá os dados e gerará o arquivo **`output.dat`** contendo os acertos finais encontrados pelo algoritmo para os coeficientes.
 
 **Exemplo de Saída (`output.dat`):**
-O arquivo gerará o log de evolução detalhado de cada geração. Exemplo:
+O arquivo gerará o log de evolução detalhado de cada geração.
 ```text
 Geracao 1 | Fitness: 0.182201 | Erro: 4.48845 | a: 1.27293 | b: 4.35681
 Geracao 2 | Fitness: 0.182201 | Erro: 4.48845 | a: 1.27293 | b: 4.35681
