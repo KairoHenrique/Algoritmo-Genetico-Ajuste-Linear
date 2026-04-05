@@ -173,7 +173,7 @@ git clone https://github.com/KairoHenrique/Algoritmo-Genetico-Ajuste-Linear
 #### **2. Acessar o diretório do projeto**
 No terminal, navegue até a pasta raiz do repositório recém-clonado:
 ```bash
-cd Algoritmo-Genetico-AJuste-Linear
+cd Algoritmo-Genetico-Ajuste-Linear
 ```
 
 #### **3. Arquivo de Dados (`input.dat`)**
