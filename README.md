@@ -108,7 +108,7 @@ O processo funciona através das seguintes etapas, mapeadas passo a passo no flu
 
 
 
-## 💬🎯 Análises e Conclusões
+## 💬 Análises e Conclusões
 
 A validação da modelagem foi feita observando o log em `output.dat`. Nas gerações iniciais, o erro apresenta grande oscilação, configurando retas que cruzam os pontos de maneira caótica. No entanto, por causa da heurística de substituir sempre o pior indivíduo, a população global se torna cada vez mais precisa. 
 
@@ -166,7 +166,7 @@ Para a execução correta do software, é recomendado o seguinte ambiente:
 #### **1. Clone o repositório**
 No terminal, digite o seguinte comando para clonar o repositório:
 ```bash
-git clone https://github.com/KairoHenrique/Algoritmo-Genetico-AJuste-Linear
+git clone https://github.com/KairoHenrique/Algoritmo-Genetico-Ajuste-Linear
 
 ```
 
